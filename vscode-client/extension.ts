@@ -1,5 +1,8 @@
 import * as vscode from "vscode";
 import { GherkinFormattingEditProvider } from "./formattingEditProvider";
+import { GherkinDefinitionProvider } from "./definitionProvider";
+import { GherkinHoverProvider } from "./hoverProvider";
+
 export async function activateAsync(context: vscode.ExtensionContext): Promise<void> {
   const robotcode = vscode.extensions.getExtension("d-biehl.robotcode");
   if (!robotcode) {
@@ -11,8 +14,15 @@ export async function activateAsync(context: vscode.ExtensionContext): Promise<v
   //   return;
   // }
 
+  const definitionProvider = new GherkinDefinitionProvider();
+  const hoverProvider = new GherkinHoverProvider();
+
   context.subscriptions.push(
     vscode.languages.registerDocumentFormattingEditProvider("gherkin", new GherkinFormattingEditProvider()),
+    vscode.languages.registerDefinitionProvider("gherkin", definitionProvider),
+    vscode.languages.registerDefinitionProvider("markdown", definitionProvider),
+    vscode.languages.registerHoverProvider("gherkin", hoverProvider),
+    vscode.languages.registerHoverProvider("markdown", hoverProvider),
   );
 }
 

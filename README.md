@@ -1,4 +1,17 @@
-# **Robot Framework Gherkin Parser**: Quick Overview
+# **Robot Framework Gherkin Parser (Extended)**: Quick Overview
+
+The **Robot Framework Gherkin Parser (Extended)** enables seamless integration of Gherkin feature files with the **Robot Framework**, facilitating behavior-driven development (BDD) with enhanced IDE support. This extended version adds **Go to Definition** and **Hover** functionality for Gherkin steps in VS Code, allowing you to navigate directly from Gherkin steps to their Robot Framework keyword implementations.
+
+## 🆕 New Features in Extended Version
+
+- **Go to Definition**: Ctrl+Click or F12 on any Gherkin step to jump to its keyword implementation in `.resource` files
+- **Hover Information**: Hover over steps to see keyword signatures, documentation, arguments, and file locations
+- **Variable Support**: Handles Robot Framework variables (`${variable}`) in step definitions
+- **Smart Matching**: Supports exact matches, pattern matching, and fuzzy matching for keyword discovery
+
+[**📖 Read detailed documentation about Go to Definition features**](./GOTO_DEFINITION.md)
+
+---
 
 The **Robot Framework Gherkin Parser** enables seamless integration of Gherkin feature files with the **Robot Framework**, facilitating behavior-driven development (BDD) with ease. This integration not only allows for the flexible execution of Gherkin feature files alongside **Robot Framework** test files but also highlights the complementary strengths of both approaches. Gherkin feature files, with their less technical and more scenario-focused syntax, emphasize the behavioral aspects of what is being tested, rather than the how. In contrast, **Robot Framework** test files tend to be more technical, focusing on the step-by-step implementation of test scenarios through keyword sequences.
 
